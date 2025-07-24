@@ -346,4 +346,21 @@ window.MHBCUpdates = {
     setTimeout(closeModal, 2400);
   });
 })();
+function openModal(serviceType) {
+  const modal = document.getElementById("modal");
+  const modalText = document.getElementById("modal-text");
+
+  const content = {
+    web: "<h3>Web Design</h3><p>We specialize in creating elegant, fast-loading, responsive websites that reflect your brand and grow your online presence.</p>",
+    app: "<h3>App Development</h3><p>From concept to launch, we design intuitive, high-performance apps for both iOS and Android platforms.</p>",
+    marketing: "<h3>Digital Marketing</h3><p>We help you attract and retain customers through SEO, content marketing, social media, and Google Ads.</p>"
+  };
+
+  modalText.innerHTML = content[serviceType] || "More details coming soon.";
+  modal.style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
 
